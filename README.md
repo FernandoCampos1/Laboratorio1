@@ -21,3 +21,6 @@ Laboratorio-Iron
 
 6. se crea pull request
 ![img_7.png](img_7.png)
+
+7. se crea pull request para ya subir los cambios a main
+![img_8.png](img_8.png)
