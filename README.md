@@ -13,3 +13,6 @@ Laboratorio-Iron
 
 ![img_2.png](img_2.png)
 
+6. se crea pull request
+
+![img_3.png](img_3.png)
