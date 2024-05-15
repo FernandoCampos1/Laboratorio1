@@ -29,3 +29,6 @@ se implementa el pull request
 
 imagenes de todos los ambientes:
 ![img_9.png](img_9.png)
+
+aprobando pull request
+![img_10.png](img_10.png)
