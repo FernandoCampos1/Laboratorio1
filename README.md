@@ -17,5 +17,5 @@ Laboratorio-Iron
 ![img_3.png](img_3.png)
 
 5. se muestra el historial de commits y ramas
-6. ![img_5.png](img_5.png)
+![img_5.png](img_5.png)
 
