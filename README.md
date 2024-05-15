@@ -13,3 +13,8 @@ Laboratorio-Iron
 
 ![img_2.png](img_2.png)
 
+4. se hace merge de develop a main
+![img_3.png](img_3.png)
+
+
+
