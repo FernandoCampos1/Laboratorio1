@@ -24,3 +24,11 @@ Laboratorio-Iron
 
 7. se crea pull request para ya subir los cambios a main
 ![img_8.png](img_8.png)
+
+se implementa el pull request
+
+imagenes de todos los ambientes:
+![img_9.png](img_9.png)
+
+aprobando pull request
+![img_10.png](img_10.png)
