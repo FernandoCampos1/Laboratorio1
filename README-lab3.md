@@ -10,6 +10,30 @@ ASSERT_TRUE(authenticate("validUser", "validPass"), "Should succeed with correct
 ASSERT_FALSE(authenticate("validUser", "wrongPass"), "Should fail with wrong credentials")
 END TEST
 
+Se cambia el pseudocódigo a código java.
+Se separa en dos métodos para que sea más claro el caso de prueba.
+
+
+`
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
+public class UserAuthenticationTest {
+
+    @Test
+    public void testUserAuthenticationSucceedsWithValidCredentials() {
+        // This test verifies that the authentication succeeds with valid credentials
+        assertTrue(authenticate("validUser", "validPass"), "Should succeed with correct credentials");
+    }
+
+    @Test
+    public void testUserAuthenticationFailsWithWrongCredentials() {
+        // This test verifies that the authentication fails with wrong credentials
+        assertFalse(authenticate("validUser", "wrongPass"), "Should fail with wrong credentials");
+    }
+}
+`
 
 Escenario 2: Funciones de procesamiento de datos
 
