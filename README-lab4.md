@@ -29,7 +29,7 @@ Estas aseguran que los parámetros (nombre de usuario y contraseña) se tratan c
 Esto ayudará a proteger el nombre de usuario y la contraseña mientras se transmiten por la red.
 
 Solucion:  
-`
+```java
 FUNCTION authenticateUser(username, hashedAndSaltedPassword):
 // Usar consultas parametrizadas para prevenir la inyección SQL
 QUERY database WITH username AND hashedAndSaltedPassword
@@ -71,7 +71,7 @@ FUNCTION accountIsLocked(username):
 // Comprobar si la cuenta del usuario está bloqueada
 RETURN accountLocked
 END FUNCTION
-`
+```
 
 codigo en java: 
 El código que proporcionaste es un esqueleto de una clase y no contiene implementaciones específicas. La implementación de estos métodos dependerá en gran medida de las bibliotecas y las tecnologías específicas que estés utilizando en tu proyecto. Sin embargo, puedo proporcionarte un ejemplo de cómo podrían verse estas implementaciones en un nivel muy alto y abstracto.
@@ -166,8 +166,9 @@ Planes de mitigación:
 2. Implementar la revocación de tokens: Deberías tener un mecanismo para revocar los tokens antes de que expiren. Esto podría ser una lista negra de tokens que se comprueba cada vez que se recibe un token.  
 3. Manejo de errores adecuado: Deberías implementar un manejo de errores adecuado que no revele información sensible. Por ejemplo, en lugar de decir "Usuario no encontrado" o "Contraseña incorrecta", podrías simplemente decir "Credenciales inválidas".
 
-Solucion:  
-`// Generar un salt aleatorio
+Solucion: 
+```java
+// Generar un salt aleatorio
 FUNCTION generateRandomSalt():
 RETURN randomString
 END FUNCTION
@@ -220,7 +221,8 @@ SET tokenExpiration = currentTime + 3600 // Token expires in one hour
 RETURN encrypt(userCredentials.username + tokenExpiration, secretKey)
 ELSE:
 RETURN "Invalid credentials"
-END FUNCTION`
+END FUNCTION
+```
 
 codigo en java:
 El código que proporcionaste es un esqueleto de una clase y no contiene implementaciones específicas. La implementación de estos métodos dependerá en gran medida de las bibliotecas y las tecnologías específicas que estés utilizando en tu proyecto. Sin embargo, puedo proporcionarte un ejemplo de cómo podrían verse estas implementaciones en un nivel muy alto y abstracto.
@@ -321,7 +323,7 @@ Mitigación: Las claves de cifrado deben almacenarse de forma segura, preferible
 Implementar un sistema CAPTCHA puede ayudar a prevenir ataques de fuerza bruta al requerir que los usuarios demuestren que son humanos antes de permitir ciertas acciones, como iniciar sesión o realizar una solicitud de recuperación de contraseña. Los CAPTCHA pueden tomar varias formas, incluyendo la resolución de un rompecabezas visual o la realización de una tarea que requiere habilidades humanas, como identificar objetos en una imagen.
 
 Solucion:
-`
+```java
 PLAN secureDataCommunication:
 // Implementar SSL/TLS para todos los datos en tránsito
 IMPLEMENT SSL/TLS for all data in transit
@@ -338,7 +340,8 @@ IMPLEMENT CAPTCHA system for sensitive actions
 
 // Rotar regularmente las claves de cifrado para limitar el impacto en caso de que una clave se vea comprometida
 IMPLEMENT regularKeyRotation
-END PLAN`
+END PLAN
+```
 
 codigo en java:
 El código que proporcionaste es un esqueleto de una clase y no contiene implementaciones específicas. La implementación de estos métodos dependerá en gran medida de las bibliotecas y las tecnologías específicas que estés utilizando en tu proyecto. Sin embargo, puedo proporcionarte un ejemplo de cómo podrían verse estas implementaciones en un nivel muy alto y abstracto.
