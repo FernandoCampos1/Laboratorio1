@@ -6,11 +6,13 @@ Laboratorio-Iron
 
 Ejemplo de pseudocódigo:**
 
+
+```java
 FUNCTION authenticateUser(username, password):
 QUERY database WITH username AND password
 IF found RETURN True
 ELSE RETURN False
-
+```
 _**EL pseudocódigo tiene varias posibles vulnerabilidades de seguridad:_**  
 1. Contraseñas en texto plano: La función parece implicar que las contraseñas se almacenan y comparan en texto plano. 
     Este es un gran riesgo de seguridad ya que cualquier persona con acceso a la base de datos podría leer las contraseñas de los usuarios.  
@@ -146,12 +148,15 @@ public class AuthenticationService {
 
 **Esquema de diseño:**
 
+
+```java
 DEFINE FUNCTION generateJWT(userCredentials):
 IF validateCredentials(userCredentials):
 SET tokenExpiration = currentTime + 3600 // Token expires in one hour
 RETURN encrypt(userCredentials + tokenExpiration, secretKey)
 ELSE:
 RETURN error
+```
 
 **_EL pseudocódigo tiene varias posibles vulnerabilidades de seguridad:_**
 
@@ -309,10 +314,13 @@ public class AuthenticationService {
 
 Esquema de Protección de Datos:**
 
+
+```java
 PLAN secureDataCommunication:
 IMPLEMENT SSL/TLS for all data in transit
 USE encrypted storage solutions for data at rest
 ENSURE all data exchanges comply with HTTPS protocols
+```
 
 **_EL pseudocódigo tiene varias posibles vulnerabilidades de seguridad:_**
 1. Vulnerabilidad: Exposición de datos sensibles: A pesar del cifrado, los datos sensibles pueden estar en riesgo si las claves de cifrado se almacenan de forma insegura o si se utilizan algoritmos de cifrado débiles. 
