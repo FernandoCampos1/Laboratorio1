@@ -68,43 +68,54 @@ Consultas NoSQL para revisión:
 
 Consulta de publicaciones de usuario: recupere las publicaciones activas más populares y muestre su título y recuento de me gusta.
 
-`db.posts
+```java
+db.posts
 .find({ status: "active" }, { title: 1, likes: 1 })
-.sort({ likes: -1 });`
-
+.sort({ likes: -1 });
+```
 
 Solucion:
 
-`// Crear índices
+```java
+// Crear índices
 db.posts.createIndex({ status: 1 });
 db.posts.createIndex({ likes: -1 });
+```
 
+```java
 // Consulta optimizada
 db.posts
 .find({ status: "active" }, { title: 1, likes: 1 })
 .sort({ likes: -1 });`
+```
 
 Tomar en cuenta que los indices aceleran las consultas de lectura, pero tambien pueden realentizar las operaciones de escritura, importante encontrar un equilibrio.
 
 
 Agregación de datos de usuario: resuma la cantidad de usuarios activos por ubicación.
 
-`db.users.aggregate([
+```java
+db.users.aggregate([
 { $match: { status: "active" } },
 { $group: { _id: "$location", totalUsers: { $sum: 1 } } },
-]);`
+]);
+```
 
 Solucion:
-`
+```java
 // Crear índices
 db.users.createIndex({ status: 1 });
 db.users.createIndex({ location: 1 });
+```
 
+```java
 // Consulta optimizada
 db.users.aggregate([
 { $match: { status: "active" } },
 { $group: { _id: "$location", totalUsers: { $sum: 1 } } },
-]);`
+]);
+```
+
 
 
 Tomar en cuenta que los indices aceleran las consultas de lectura, pero tambien pueden realentizar las operaciones de escritura, importante encontrar un equilibrio.
