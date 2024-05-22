@@ -14,7 +14,7 @@ Tareas:
 
 Consultas SQL proporcionadas para la optimización:
 
-Consulta de pedidos: recupere pedidos con muchos artículos y calcule el precio total.
+   1. Consulta de pedidos: recupere pedidos con muchos artículos y calcule el precio total.
 
 ```java
 SELECT Orders.OrderID, SUM(OrderDetails.Quantity * OrderDetails.UnitPrice) AS TotalPrice
@@ -38,7 +38,7 @@ WHERE OrderDetails.Quantity > 10
 GROUP BY Orders.OrderID;`
 ```
 
-Consulta del cliente: busque todos los clientes de Londres y ordénelos por Nombre del cliente.
+   2. Consulta del cliente: busque todos los clientes de Londres y ordénelos por Nombre del cliente.
 
 ```java
 SELECT CustomerName FROM Customers WHERE City = 'London' ORDER BY CustomerName;
@@ -66,7 +66,7 @@ Se analiza la aplicación teórica de índices o la reescritura de subconsultas 
 
 Consultas NoSQL para revisión:
 
-Consulta de publicaciones de usuario: recupere las publicaciones activas más populares y muestre su título y recuento de me gusta.
+   1. Consulta de publicaciones de usuario: recupere las publicaciones activas más populares y muestre su título y recuento de me gusta.
 
 ```java
 db.posts
@@ -92,7 +92,7 @@ db.posts
 Tomar en cuenta que los indices aceleran las consultas de lectura, pero tambien pueden realentizar las operaciones de escritura, importante encontrar un equilibrio.
 
 
-Agregación de datos de usuario: resuma la cantidad de usuarios activos por ubicación.
+   2. Agregación de datos de usuario: resuma la cantidad de usuarios activos por ubicación.
 
 ```java
 db.users.aggregate([
