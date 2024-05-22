@@ -1,6 +1,13 @@
 # Laboratorio 5
 Laboratorio-Iron
 
+
+Tarea de optimización:
+
+Proponer cambios para mejorar el rendimiento de las consultas según la estructura del documento y las estrategias de indexación.
+Las sugerencias pueden incluir modificar el esquema del documento, agregar índices u optimizar los canales de agregación.
+
+
 Tareas:
 1. Optimización de consultas SQL
    A los participantes se les dan consultas SQL y se les pide que las mejoren basándose en conocimientos teóricos de optimización de bases de datos.
@@ -49,28 +56,50 @@ Se analiza la aplicación teórica de índices o la reescritura de subconsultas 
 
 
 
-5. Implementación de consultas NoSQL
+2. Implementación de consultas NoSQL
    Los participantes optimizarán teóricamente las consultas NoSQL proporcionadas, centrándose en la recuperación eficiente de datos y la latencia minimizada.
 
 Consultas NoSQL para revisión:
 
 Consulta de publicaciones de usuario: recupere las publicaciones activas más populares y muestre su título y recuento de me gusta.
 
+`db.posts
+.find({ status: "active" }, { title: 1, likes: 1 })
+.sort({ likes: -1 });`
+
+
+Solucion:
+
+`// Crear índices
+db.posts.createIndex({ status: 1 });
+db.posts.createIndex({ likes: -1 });
+
+// Consulta optimizada
 db.posts
 .find({ status: "active" }, { title: 1, likes: 1 })
-.sort({ likes: -1 });
-Explica este código
+.sort({ likes: -1 });`
+
+Tomar en cuenta que los indices aceleran las consultas de lectura, pero tambien pueden realentizar las operaciones de escritura, importante encontrar un equilibrio.
+
 
 Agregación de datos de usuario: resuma la cantidad de usuarios activos por ubicación.
-Copiar
+
+`db.users.aggregate([
+{ $match: { status: "active" } },
+{ $group: { _id: "$location", totalUsers: { $sum: 1 } } },
+]);`
+
+Solucion:
+`
+// Crear índices
+db.users.createIndex({ status: 1 });
+db.users.createIndex({ location: 1 });
+
+// Consulta optimizada
 db.users.aggregate([
 { $match: { status: "active" } },
 { $group: { _id: "$location", totalUsers: { $sum: 1 } } },
-]);
-Explica este código
+]);`
 
-Tarea de optimización:
 
-Proponer cambios para mejorar el rendimiento de las consultas según la estructura del documento y las estrategias de indexación.
-Las sugerencias pueden incluir modificar el esquema del documento, agregar índices u optimizar los canales de agregación.
-
+Tomar en cuenta que los indices aceleran las consultas de lectura, pero tambien pueden realentizar las operaciones de escritura, importante encontrar un equilibrio.
