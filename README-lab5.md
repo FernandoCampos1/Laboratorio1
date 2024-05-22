@@ -15,16 +15,19 @@ Tareas:
 Consultas SQL proporcionadas para la optimización:
 
 Consulta de pedidos: recupere pedidos con muchos artículos y calcule el precio total.
-`
+
+```java
 SELECT Orders.OrderID, SUM(OrderDetails.Quantity * OrderDetails.UnitPrice) AS TotalPrice
 FROM Orders
 JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
 WHERE OrderDetails.Quantity > 10
-GROUP BY Orders.OrderID;`
+GROUP BY Orders.OrderID;
+```
 
 Solucion:
 
-`CREATE INDEX idx_orders_orderid ON Orders(OrderID);
+```java
+CREATE INDEX idx_orders_orderid ON Orders(OrderID);
 CREATE INDEX idx_orderdetails_orderid ON OrderDetails(OrderID);
 CREATE INDEX idx_orderdetails_quantity ON OrderDetails(Quantity);
 
@@ -33,20 +36,22 @@ FROM Orders
 JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
 WHERE OrderDetails.Quantity > 10
 GROUP BY Orders.OrderID;`
+```
 
 Consulta del cliente: busque todos los clientes de Londres y ordénelos por Nombre del cliente.
 
+```java
 SELECT CustomerName FROM Customers WHERE City = 'London' ORDER BY CustomerName;
-
+```
 
 solucion:
 
-`
+```java
 CREATE INDEX idx_customers_city ON Customers(City);
 CREATE INDEX idx_customers_customername ON Customers(CustomerName);
 
 SELECT CustomerName FROM Customers WHERE City = 'London' ORDER BY CustomerName;
-`
+```
 
 
 Tareas de optimización:
