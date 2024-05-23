@@ -35,20 +35,20 @@ Esto garantiza que la aplicación se comporte como se espera en un entorno idén
 Finalmente, las imágenes probadas con éxito se etiquetan y se envían a un registro de Docker, y luego se despliegan en diferentes entornos utilizando herramientas de orquestación como Kubernetes o Docker Swarm.
 
 ## Beneficios de Docker
-La contenedorización de Docker aporta coherencia, portabilidad y escalabilidad a los procesos de compilación, prueba e implementación. 
-Al encapsular la aplicación y su entorno en una imagen, Docker asegura que la aplicación se comportará de la misma manera en todos los entornos. 
-Además, las imágenes de Docker son portables y pueden ser desplegadas en cualquier sistema que tenga Docker instalado. 
-Finalmente, Docker facilita el escalado y el equilibrio de carga de las aplicaciones.
+1. La contenedorización de Docker aporta coherencia, portabilidad y escalabilidad a los procesos de compilación, prueba e implementación. 
+2. Al encapsular la aplicación y su entorno en una imagen, Docker asegura que la aplicación se comportará de la misma manera en todos los entornos. 
+3. Además, las imágenes de Docker son portables y pueden ser desplegadas en cualquier sistema que tenga Docker instalado. 
+4. Finalmente, Docker facilita el escalado y el equilibrio de carga de las aplicaciones.
 
 ## Desafíos Potenciales
 A pesar de sus beneficios, Docker también puede introducir algunos desafíos. 
-Por ejemplo, las imágenes de Docker pueden contener vulnerabilidades de seguridad si no se construyen y se gestionan correctamente. 
-Además, la gestión de una gran cantidad de servicios en contenedores puede ser compleja. 
-Por último, organizar contenedores y gestionar sus interacciones puede ser difícil, especialmente en aplicaciones grandes y complejas.
+1. Las imágenes de Docker pueden contener vulnerabilidades de seguridad si no se construyen y se gestionan correctamente. 
+2. La gestión de una gran cantidad de servicios en contenedores puede ser compleja. 
+3. Organizar contenedores y gestionar sus interacciones puede ser difícil, especialmente en aplicaciones grandes y complejas.
 
 ## Soluciones Propuestas
 Para superar estos desafíos, se podrían considerar las siguientes soluciones: 
-utilizar herramientas de escaneo de imágenes para detectar y corregir vulnerabilidades de seguridad en las imágenes de Docker; 
-utilizar herramientas de orquestación como Kubernetes para gestionar y organizar contenedores; 
+1. utilizar herramientas de escaneo de imágenes para detectar y corregir vulnerabilidades de seguridad en las imágenes de Docker; 
+2. utilizar herramientas de orquestación como Kubernetes para gestionar y organizar contenedores; 
 y seguir las mejores prácticas de Docker y de desarrollo de microservicios para organizar y gestionar los contenedores de manera efectiva.
 
