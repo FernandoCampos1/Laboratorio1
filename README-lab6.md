@@ -1,4 +1,4 @@
-# Laboratorio 5
+# Laboratorio 6
 Laboratorio-Iron
 
 Instrucciones de laboratorio
