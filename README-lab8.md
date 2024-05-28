@@ -21,7 +21,7 @@ Para modelar la API, se pueden definir los siguientes puntos finales:
 
 
 
-```java 
+```yaml 
 openapi: 3.0.0
         info:
         title: E-commerce Service API
