@@ -21,6 +21,322 @@ Para modelar la API, se pueden definir los siguientes puntos finales:
 
 
 
+```swagger 
+openapi: 3.0.0
+        info:
+        title: E-commerce Service API
+        version: 1.0.0
+        description: API for managing an e-commerce system.
+        servers:
+        - url: "https://api.ecommerceservice.com/v1"
+        description: Production server
+        paths:
+        /users:
+        get:
+        summary: List all users
+        operationId: listUsers
+        responses:
+        "200":
+        description: A list of users
+        content:
+        application/json:
+        schema:
+        type: array
+        items:
+        $ref: "#/components/schemas/User"
+        "500":
+        description: Internal server error
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        post:
+        summary: Add a new user
+        operationId: addUser
+        requestBody:
+        required: true
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/User"
+        responses:
+        "201":
+        description: User created
+        "400":
+        description: Bad request
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        "500":
+        description: Internal server error
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        /users/{userId}:
+        put:
+        summary: Update a user
+        operationId: updateUser
+        parameters:
+        - name: userId
+        in: path
+        required: true
+        schema:
+        type: string
+        requestBody:
+        required: true
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/User"
+        responses:
+        "200":
+        description: User updated
+        "400":
+        description: Bad request
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        "404":
+        description: User not found
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        "500":
+        description: Internal server error
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        /orders:
+        get:
+        summary: List all orders
+        operationId: listOrders
+        responses:
+        "200":
+        description: A list of orders
+        content:
+        application/json:
+        schema:
+        type: array
+        items:
+        $ref: "#/components/schemas/Order"
+        "500":
+        description: Internal server error
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        post:
+        summary: Add a new order
+        operationId: addOrder
+        requestBody:
+        required: true
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Order"
+        responses:
+        "201":
+        description: Order created
+        "400":
+        description: Bad request
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        "500":
+        description: Internal server error
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        /orders/{orderId}:
+        put:
+        summary: Update an order
+        operationId: updateOrder
+        parameters:
+        - name: orderId
+        in: path
+        required: true
+        schema:
+        type: string
+        requestBody:
+        required: true
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Order"
+        responses:
+        "200":
+        description: Order updated
+        "400":
+        description: Bad request
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        "404":
+        description: Order not found
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        "500":
+        description: Internal server error
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        /tickets:
+        get:
+        summary: List all tickets
+        operationId: listTickets
+        responses:
+        "200":
+        description: A list of tickets
+        content:
+        application/json:
+        schema:
+        type: array
+        items:
+        $ref: "#/components/schemas/Ticket"
+        "500":
+        description: Internal server error
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        post:
+        summary: Add a new ticket
+        operationId: addTicket
+        requestBody:
+        required: true
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Ticket"
+        responses:
+        "201":
+        description: Ticket created
+        "400":
+        description: Bad request
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        "500":
+        description: Internal server error
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        /tickets/{ticketId}:
+        put:
+        summary: Update a ticket
+        operationId: updateTicket
+        parameters:
+        - name: ticketId
+        in: path
+        required: true
+        schema:
+        type: string
+        requestBody:
+        required: true
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Ticket"
+        responses:
+        "200":
+        description: Ticket updated
+        "400":
+        description: Bad request
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        "404":
+        description: Ticket not found
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        "500":
+        description: Internal server error
+        content:
+        application/json:
+        schema:
+        $ref: "#/components/schemas/Error"
+        components:
+        schemas:
+        User:
+        type: object
+        required:
+        - id
+        - name
+        properties:
+        id:
+        type: string
+        example: "1"
+        name:
+        type: string
+        example: "John Doe"
+        email:
+        type: string
+        example: "john.doe@example.com"
+        Order:
+        type: object
+        required:
+        - id
+        - userId
+        - items
+        properties:
+        id:
+        type: string
+        example: "1"
+        userId:
+        type: string
+        example: "1"
+        items:
+        type: array
+        items:
+        type: object
+        properties:
+        productId:
+        type: string
+        example: "1"
+        quantity:
+        type: integer
+        example: 1
+        Ticket:
+        type: object
+        required:
+        - id
+        - userId
+        - description
+        properties:
+        id:
+        type: string
+        example: "1"
+        userId:
+        type: string
+        example: "1"
+        description:
+        type: string
+        example: "I have a problem with my order."
+        Error:
+        type: object
+        required:
+        - message
+        properties:
+        message:
+        type: string
+        example: "An error occurred."
+```
 
 
 * Informe de reflexión:
@@ -54,6 +370,3 @@ Para modelar la API, se pueden definir los siguientes puntos finales:
 
 3. Información obtenida del ejercicio y posibles mejoras que podrían realizar en futuros proyectos de diseño de API.
 
-```java 
-
-```
