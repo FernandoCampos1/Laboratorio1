@@ -338,6 +338,10 @@ openapi: 3.0.0
         example: "An error occurred."
 ```
 
+Imagenes del diseño:
+![img_11.png](img_11.png)
+
+![img_12.png](img_12.png)
 
 * Informe de reflexión:
 - Un breve informe donde los participantes reflexionan sobre su proceso de diseño, discutiendo:
