@@ -374,3 +374,5 @@ Imagenes del diseño:
 
 3. Información obtenida del ejercicio y posibles mejoras que podrían realizar en futuros proyectos de diseño de API.
 
+- Documentación Mejorada: Asegúrate de que tu API esté bien documentada. Esto incluye descripciones claras de los endpoints, los parámetros de las solicitudes, las respuestas y los errores. Una buena documentación facilita el uso de la API por parte de otros desarrolladores.  
+- Manejo de Errores Consistente: Proporciona respuestas de error consistentes y útiles. Esto puede incluir un código de estado HTTP apropiado, un mensaje de error claro y, si es posible, sugerencias sobre cómo resolver el error. 
