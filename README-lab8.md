@@ -1,7 +1,7 @@
 # Laboratorio 8
 Laboratorio-Iron
 
-# Taller de diseño y docuemntación de API
+# Taller de diseño y documentación de API
 
 Entregables esperados:
 
